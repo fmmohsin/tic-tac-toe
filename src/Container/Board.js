@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Board.css'
 import Square from '../component/Square'
-import * as ai from '../ai'
+import * as ai from '../logic'
 class Board extends Component {
 
     constructor(props) {
