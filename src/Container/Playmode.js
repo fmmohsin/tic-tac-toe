@@ -6,7 +6,7 @@ import CustomBtn from '../component/Custombtn'
 const Playmode = (props) => {
 
     return (
-            <div>
+            <div className="playmode">
                 <div className="icons-wrapper">
                     <CrossIcon icon='icon-size' />
                     <CircleIcon icon='icon-size' />

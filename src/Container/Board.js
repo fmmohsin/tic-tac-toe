@@ -11,8 +11,9 @@ class Board extends Component {
             isNextX:props.isNextX
         };
     }
-
+    count=0;
     onClickHandler = (id) => {
+        this.count++;
         if(this.state.squares[id]===null){
             let localSquares=this.state.squares.concat();
             if(this.state.isNextX)
@@ -29,6 +30,12 @@ class Board extends Component {
                         isNextX:props.isNextX
                     }));
         
+                }else if(this.count===9){
+                    alert("draw");
+                    this.setState((state,props)=>({
+                        squares: Array(9).fill(null),
+                        isNextX:props.isNextX
+                    }));
                 }
             });
         }

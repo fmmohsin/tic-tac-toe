@@ -50,16 +50,13 @@ class Gameboard extends Component {
         }));
     }
     updateScore = (winner) => {
-        console.log(winner + "from Score")
         if (this.state.players_avatar === winner) {
-            console.log('1')
             this.setState((state) => ({
                 ...state,
                 score: [state.score[0] + 1, state.score[1]]
             }))
         }
         else {
-            console.log('2')
             this.setState((state) => ({
                 ...state,
                 score: [state.score[0], state.score[1] + 1]

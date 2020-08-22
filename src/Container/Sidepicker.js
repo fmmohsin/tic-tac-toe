@@ -8,7 +8,6 @@ import './Sidepicker.css'
 import { withRouter } from 'react-router-dom'
 
 const Sidepicker = (props) => {
-    console.log()
     if(!props.gameState.playmode)
         props.history.push('./Playmode')
     let cross=[];
