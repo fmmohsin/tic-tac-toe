@@ -1,0 +1,20 @@
+.outer-unselected {
+    background-color: rgba(128, 128, 128, 0.2);
+    width: 2.25em;
+    height: 2.25em;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.inner-unselected {
+    background-color: white;
+    top: 13%;
+    left: 13%;
+    width: 75%;
+    height: 75%;
+    position: relative;
+    border-radius: 50%;
+}
+.center-align{
+transform: translateX(-20px);
+}

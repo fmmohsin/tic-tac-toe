@@ -1,0 +1,27 @@
+.outer-selected {
+    background-image: linear-gradient(to top right, rgb(54, 116, 253), rgb(144, 232, 214));
+    width: 2.25em;
+    height: 2.25em;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.inner-selected1 {
+    background-color: white;
+    top: 13%;
+    left: 13%;
+    width: 75%;
+    height: 75%;
+    position: relative;
+    border-radius: 50%;
+}
+
+.inner-selected2 {
+    background-image: linear-gradient(to top right, rgb(54, 116, 253), rgb(144, 232, 214));
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    position: relative;
+    border-radius: 50%;
+}

@@ -1,0 +1,36 @@
+.row-gameboard{
+        display: flex;
+        width: 300px;
+        justify-content: space-around;
+        align-items: center;
+}
+.player-name{
+    width:70px;
+    text-align: center;
+}
+.score-board{
+    background-color: white;
+    width:70px;
+    height: 30px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    border:none;
+    position: relative;
+}
+.score-board:after,
+.score-board:before{ 
+    top:4px;
+    content: '';
+    position: absolute;
+    width:70px;
+    height: 30px;
+    border-radius:2em;
+    background: rgba(95, 95, 95, 0.2);
+    z-index: -1;
+    filter: blur(5px);
+}
+hr{
+    width:3px
+}
