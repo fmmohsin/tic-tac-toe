@@ -74,7 +74,7 @@ class Gameboard extends Component {
                     <div className="player-name"><h3>{this.state.players[1]}</h3></div>
                 </section>
                 <section>
-                    <Board updateScore={this.updateScore} withAI={this.state.players[1] === 'AI' ? true : false} isNextX={this.state.players_avatar === 'x' ? true : false} />
+                    <Board updateScore={this.updateScore} withAI={this.state.players[1] === 'AI' ? true : false} firstPlayer={this.state.players_avatar} />
                 </section>
             </Fragment>
         )
