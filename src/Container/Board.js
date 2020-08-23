@@ -20,8 +20,8 @@ class Board extends Component {
     }
 
     updateSquare = (id) => {
-        this.moves++;
         if (this.state.squares[id] === '') {
+            this.moves++;
             let localSquares = this.state.squares.concat();
             if (this.state.isNextX)
                 localSquares[id] = 'x'

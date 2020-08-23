@@ -1,7 +1,8 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import Board from './Board'
 import './Gameboard.css'
+import PreferenceIcon from '../component/PreferenceIcon'
 class Gameboard extends Component {
 
     constructor(props) {
@@ -67,7 +68,7 @@ class Gameboard extends Component {
     render() {
 
         return (
-            <Fragment>
+            <div className="container">
                 <section className="row-gameboard">
                     <div className="player-name"><h3>{this.state.players[0]}</h3></div>
                     <div className="score-board"><h2>{this.state.score[0]}{' '}-{' '}{this.state.score[1]}</h2></div>
@@ -76,7 +77,8 @@ class Gameboard extends Component {
                 <section>
                     <Board updateScore={this.updateScore} withAI={this.state.players[1] === 'AI' ? true : false} firstPlayer={this.state.players_avatar} />
                 </section>
-            </Fragment>
+                <PreferenceIcon />
+            </div>
         )
     }
 }

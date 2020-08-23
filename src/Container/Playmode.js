@@ -3,10 +3,11 @@ import CrossIcon from '../component/CrossIcon'
 import CircleIcon from '../component/CircleIcon'
 import './Playmode.css'
 import CustomBtn from '../component/Custombtn'
+import PreferenceIcon from '../component/PreferenceIcon'
 const Playmode = (props) => {
 
     return (
-            <div className="playmode">
+            <div className="container">
                 <div className="icons-wrapper">
                     <CrossIcon icon='icon-size' />
                     <CircleIcon icon='icon-size' />
@@ -16,6 +17,7 @@ const Playmode = (props) => {
                     <CustomBtn id='ai' autofocus={true} onClick={props.onplayModeHandler}> With AI</CustomBtn>
                     <CustomBtn id='friend' onClick={props.onplayModeHandler}>With a friend</CustomBtn>
                 </div>
+                <PreferenceIcon />
             </div>
     )
 }
