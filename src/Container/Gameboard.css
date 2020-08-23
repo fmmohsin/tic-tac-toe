@@ -18,6 +18,7 @@
     justify-content:center ;
     border:none;
     position: relative;
+    font-size:25px
 }
 .score-board:after,
 .score-board:before{ 

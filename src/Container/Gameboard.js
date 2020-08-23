@@ -9,7 +9,7 @@ class Gameboard extends Component {
         super(props)
         this.state = {
             score: [0, 0],
-            players: ['Player1'],
+            players: ['Alex'],
             players_avatar: null
         }
     }
@@ -71,7 +71,7 @@ class Gameboard extends Component {
             <div className="container">
                 <section className="row-gameboard">
                     <div className="player-name"><h3>{this.state.players[0]}</h3></div>
-                    <div className="score-board"><h2>{this.state.score[0]}{' '}-{' '}{this.state.score[1]}</h2></div>
+                    <div className="score-board"><span>{this.state.score[0]}{' '}-{' '}{this.state.score[1]}</span></div>
                     <div className="player-name"><h3>{this.state.players[1]}</h3></div>
                 </section>
                 <section>
