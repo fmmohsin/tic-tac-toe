@@ -18,38 +18,29 @@ export const calculateWinner = (squares) => {
     return null;
 }
 
-export const getPossiblePosition = (selfAvatar, opponentAvatar, squares) => {    
-    let isWinningpos = false;
-    let counter = 0;
+export const getPossiblePosition = (playerAvatar, AIAvatar, squares) => {
+    let playerWinningPos = null;
+    let AIWinningPos = null;
     for (var i = 0; i < squares.length; i++) {
         if (squares[i] === '' && squares[i] !== null && squares[i] !== undefined) {
             let localSquare = squares.concat();
-            localSquare[i] = opponentAvatar;
-            let opponent = calculateWinner(localSquare)
-            localSquare[i] = selfAvatar;
-            let mywin = calculateWinner(localSquare)
-            if (mywin === selfAvatar || opponent === opponentAvatar) {
-                isWinningpos = true;
-                break;
-            }
-        } else {
-            counter++;
+            localSquare[i] = AIAvatar;
+            if (calculateWinner(localSquare) === AIAvatar)
+                AIWinningPos = i;
+            localSquare[i] = playerAvatar;
+            if (calculateWinner(localSquare) === playerAvatar)
+                playerWinningPos = i;
         }
     }
-    if (counter + 1 !== 9) {
-        if (i === 9 && !isWinningpos) {
-            let findpos;
-            do {
-                findpos = Math.floor(Math.random() * squares.length);
-                if (squares[findpos] === null || squares[findpos] === undefined || squares[findpos] === '')
-                    break;
-            } while (1)
-            return findpos
-        } else {
-            return i
-        }
-    } else {
-        return null;
-    }
-
+    if (AIWinningPos !== null)
+        return AIWinningPos;
+    if (playerWinningPos !== null)
+        return playerWinningPos;
+    let findpos;
+    do {
+        findpos = Math.floor(Math.random() * squares.length);
+        if (squares[findpos] === null || squares[findpos] === undefined || squares[findpos] === '')
+            break;
+    } while (1)
+    return findpos
 }

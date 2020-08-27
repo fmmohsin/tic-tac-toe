@@ -16,7 +16,7 @@ class Board extends Component {
     }
     onClickHandler = (id) => {
         if(this.moves%2===0||!this.props.withAI)
-        this.updateSquare(id)
+            this.updateSquare(id)
     }
 
     updateSquare = (id) => {
@@ -34,41 +34,28 @@ class Board extends Component {
             });
         }
     }
+    resetBoard=()=>{
+        this.moves = 0;
+        this.setState((state, props) => ({
+            squares: Array(9).fill(''),
+            isNextX: props.firstPlayer === 'x' ? true : false,
+            isAIturn: false
+        }));
+    }
     componentDidUpdate = () => {
         const squares = this.state.squares.slice();
         const winner = ai.calculateWinner(squares);
         if (winner) {
-            this.moves = 0;
             alert('The winner is ' + (this.props.firstPlayer === winner ? 'Player 1' : 'Player 2'))
             this.props.updateScore(winner);
-            this.setState((state, props) => ({
-                squares: Array(9).fill(''),
-                isNextX: props.firstPlayer === 'x' ? true : false,
-                isAIturn: false
-            }));
-        } else if (this.moves === 9) {
+            this.resetBoard();
+        } else if (this.moves > 8) {
             alert("draw");
-            this.moves = 0;
-            this.setState((state, props) => ({
-                squares: Array(9).fill(''),
-                isNextX: props.firstPlayer === 'x' ? true : false,
-                isAIturn: false
-            }));
+            this.resetBoard();
         }   
-
-        if(this.props.withAI&&this.state.isAIturn&&this.moves!==0&&this.moves!==9){
+        if(this.props.withAI&&this.state.isAIturn&&this.moves%2!==0){
             const possiblePosition=ai.getPossiblePosition(this.props.firstPlayer,this.opponent,this.state.squares)
-            if(possiblePosition)
-                this.updateSquare(possiblePosition)
-            else
-            {
-                this.moves = 0;
-                this.setState((state, props) => ({
-                    squares: Array(9).fill(''),
-                    isNextX: props.firstPlayer === 'x' ? true : false,
-                    isAIturn: false
-                }));
-            }
+            this.updateSquare(possiblePosition)
         }
 
     }
